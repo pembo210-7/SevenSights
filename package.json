@@ -31,10 +31,10 @@
     "front-end"
   ],
   "scripts": {
-    "start": "INSIGHT_PUBLIC_PATH=public node node_modules/.bin/SevenSightsAPI"
+    "start": "INSIGHT_NETWORK=livenet INSIGHT_PUBLIC_PATH=public node node_modules/.bin/SevenSightsAPI"
   },
   "dependencies": {
-    "SevenSightsAPI": "git://github.com/number7team/SevenSightsAPI/.git"
+    "SevenSightsAPI": "git://github.com/number7team/SevenSightsAPI.git"
   },
   "devDependencies": {
     "bower": "~1.2.8",
