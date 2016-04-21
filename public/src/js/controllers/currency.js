@@ -18,8 +18,8 @@ angular.module('insight.currency').controller('CurrencyController',
 
         var response;
 
-        if (this.symbol === 'USD') {
-          response = _roundFloat((value * this.factor), 2);
+        if (this.symbol === 'BTC') {
+          response = _roundFloat((value * this.factor), 8);
         } else if (this.symbol === 'N7') {
           this.factor = 1;
           response = _roundFloat((value * this.factor), 8);        
@@ -46,9 +46,9 @@ angular.module('insight.currency').controller('CurrencyController',
       $rootScope.currency.symbol = currency;
       localStorage.setItem('insight-currency', currency);
 
-      if (currency === 'USD') {
+      if (currency === 'BTC') {
         Currency.get({}, function(res) {
-          $rootScope.currency.factor = $rootScope.currency.btceusd = res.data.btceusd;
+          $rootScope.currency.factor = $rootScope.currency.yobitBTC = res.data.yobitBTC;
         });
       } else if (currency === 'N7') {
         $rootScope.currency.factor = 1;
@@ -63,7 +63,7 @@ angular.module('insight.currency').controller('CurrencyController',
 
     // Get initial value
     Currency.get({}, function(res) {
-      $rootScope.currency.factor = $rootScope.currency.btceusd = res.data.btceusd;
+      $rootScope.currency.factor = $rootScope.currency.yobitBTC = res.data.yobitBTC;
     });
 
   });
