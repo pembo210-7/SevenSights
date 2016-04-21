@@ -6,7 +6,7 @@ angular.module('insight.system').controller('HeaderController',
 
     $rootScope.currency = {
       factor: 1,
-      btceusd: 0,
+      yobitBTC: 0,
       symbol: 'N7'
     };
 
