@@ -15,7 +15,8 @@
             <tr>
               <th translate>Height</th>
               <th translate>Age</th>
-              <th class="text-right"><span class="ellipsis" translate>Transactions</span></th>
+              <th class="text-right" translate>Difficulty</th>
+              <th class="text-right" style="width:60px"><span class="ellipsis" translate>TXs</span></th>
               <th class="text-right hidden-xs"><span class="ellipsis" translate>Mined by</span></th>
               <th class="text-right" translate>Size</th>
             </tr>
@@ -27,6 +28,7 @@
               <a href="/block/{{b.hash}}">{{b.height}}</a>
             </td>
             <td><span class="ellipsis">{{humanSince(b.time)}}</span></td>
+            <td class="text-right">{{b.difficulty}}</td>
             <td class="text-right">{{b.txlength}}</td>
             <td class="text-right hidden-xs"><a href="{{b.poolInfo.url}}" title="{{b.poolInfo.poolName}}" target="_blank" data-ng-show="b.poolInfo">{{b.poolInfo.poolName}}</a></td>
             <td class="text-right">{{b.size}}</td>
