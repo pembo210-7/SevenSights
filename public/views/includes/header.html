@@ -36,7 +36,9 @@
         </span> &middot;
         <strong>{{'Height'|translate}}</strong> {{totalBlocks || info.blocks}}
         &middot;
-        <strong>N7</strong> {{((totalBlocks * 300) + 18967442) || ((info.blocks * 300) + 18967442)}}
+        <span data-ng-init="getStatus('TxOutSetInfo')">
+          <strong>N7</strong> {{(txoutsetinfo.total_amount).toFixed(0)}}
+        </span>
       </div>
       </li>
       <li>
