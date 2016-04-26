@@ -3,7 +3,7 @@
 <script>
 //get current coin supply from api
 var xmlhttp = new XMLHttpRequest();
-var url = "//localhost:7000/api/status?q=getTxOutSetInfo";
+var url = "/api/status?q=getTxOutSetInfo";
 
 xmlhttp.onreadystatechange = function() {
     if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
