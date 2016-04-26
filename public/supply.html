@@ -1,0 +1,21 @@
+<div id="supply"></div>
+
+<script>
+//get current coin supply from api
+var xmlhttp = new XMLHttpRequest();
+var url = "//localhost:7000/api/status?q=getTxOutSetInfo";
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        var myArr = JSON.parse(xmlhttp.responseText);
+        myFunction(myArr);
+    }
+};
+xmlhttp.open("GET", url, true);
+xmlhttp.send();
+
+function myFunction(arr) {
+    var supply = arr.txoutsetinfo.total_amount.toFixed(0);
+    document.getElementById("supply").innerHTML = supply;
+}
+</script>
